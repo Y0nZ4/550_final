@@ -10,3 +10,15 @@ reports/final_report.html: reports/Final_report.Rmd scripts/table_output.csv scr
 .PHONY: clean
 clean:
 	rm -f reports/report.html
+	
+.PHONY: install
+
+install:
+	Rscript -e "renv::restore()"
+## Reproducible environment
+
+After cloning this repo, install the exact R package environment by running:
+
+```sh
+make install
+
