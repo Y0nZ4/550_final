@@ -19,6 +19,7 @@ RUN mkdir -p renv/.cache
 ENV RENV_PATHS_CACHE renv/.cache
 COPY .Rprofile .Rprofile
 COPY reports reports
+
 RUN R -e "renv::restore()"
 
 FROM --platform=linux/amd64 rocker/tidyverse:4.3.1
@@ -28,6 +29,7 @@ COPY --from=base /home/rstudio/project .
 ENV WHICH_CONFIG="default"
 COPY Makefile Makefile
 COPY Final_report.Rmd Final_report.Rmd
+COPY output output
 RUN mkdir -p code output reports
 
-CMD make && mv Final_report.html Final_report
+CMD make && mv Final_report.html reports
