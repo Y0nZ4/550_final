@@ -9,9 +9,15 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r}
+library(here)
+library(kableExtra)
+```
+
+
 ```{r, here-i-am, include = FALSE}
 here::i_am(
-  "report.Rmd"
+  "reports/Final_report.Rmd"
 )
 ```
 
@@ -25,15 +31,27 @@ The main goal of this analysis was to investigate the relationship between these
 # Table and description
 Here I make a table from the data.
 ```{r show-table}
-summary_table <- read.csv("output/table_output.csv")
-summary_table
+summary_table <- read.csv(here::here("output", "table_output.csv"))
+summary_table %>%
+  kable(
+    format    = "html",                        
+    caption   = "Table 1. Descriptive Summary",
+    digits    = 2,                             
+    align     = "c"                            
+  ) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover"), 
+    full_width        = FALSE,                 
+    position          = "center"               
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#EFEFEF")  
 ```
 ## Description for the table
 Compared with those who did not die (N=203), those who did die (N=96) were older (median 65 vs. 60 years), had higher serum creatinine levels (1.30 mg/dL vs. 1.00 mg/dL), slightly lower serum sodium (135.5 mEq/L vs. 137.0 mEq/L), and higher prevalence of hypertension (41% vs. 33%); however, there were few differences in smoking (31% vs. 33%) and diabetes (42% vs. 42%). 33%); however, there were few differences in smoking prevalence (31% vs. 33%) and diabetes prevalence (42% vs. 42%).
 
 # Figure
 ```{r show-figure, out.width='50%'}
-knitr::include_graphics("output/my_figure.png")
+knitr::include_graphics(here::here("output/my_figure.png"))
 ```
 
 ## Description for the figure
