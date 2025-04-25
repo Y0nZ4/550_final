@@ -33,6 +33,12 @@ The report will be output in the reports file.
   renv::snapshot()
   ```
   Then commit the changes and push to GitHub.
+
+## Building the docker image by
+  ```bash
+  cd path/to/your-project
+  docker build -t yourdockerhubuser/your-image:latest .
+  ```
 ## Building the Report in docker
   ```bash
   make report
