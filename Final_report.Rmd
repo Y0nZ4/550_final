@@ -1,5 +1,5 @@
 ---
-title: "Project_part_2"
+title: "Project_Final"
 author: "Peicheng Ji"
 date: "`r Sys.Date()`"
 output: html_document
@@ -17,7 +17,7 @@ library(kableExtra)
 
 ```{r, here-i-am, include = FALSE}
 here::i_am(
-  "reports/Final_report.Rmd"
+  "Final_report.Rmd"
 )
 ```
 
