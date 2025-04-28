@@ -40,7 +40,10 @@ or build by yourself
   cd path/to/your-project
   docker build -t yourdockerhubuser/your-image:tag .
   ```
-
+or
+  ```bash
+  make build
+  ```
 ## Building the Report in docker
   ```bash
   make report
