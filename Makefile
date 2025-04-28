@@ -19,7 +19,7 @@ clean:
 
 
 build:
-	docker build -t Y0nZ4/550-final-draft:latest .
+	docker build -t y0nz4/550-final-draft:latest .
 
 report:
-	docker run --rm -v "$(PWD)/reports":/home/rstudio/project/reports Y0nZ4/550-final-draft:latest
+	docker run --rm -v "$(PWD)/reports":/home/rstudio/project/reports y0nz4/550-final-draft:latest
